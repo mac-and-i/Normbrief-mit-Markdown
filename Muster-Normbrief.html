@@ -1,0 +1,475 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Muster-Normbrief</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+/* 
+ Normbrief DIN 5008 mit Markdown
+ ---------------------------------------------------------------
+ by Wolfgang Reszel for Mac & i 
+ http://www.mac-and-i.de/markdown
+ 
+ Kompatibel mit:
+ Marked 
+ LightPaper
+ Ulysses III
+ Mou
+ 
+ v1.0 from 2014-03-10
+ */
+
+
+/* @group Basis
+ ---------------------------------------------------------------
+ */
+
+html {
+	width: 210mm;
+	margin:0;
+	padding:0;
+	height:100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+	-webkit-font-smoothing:antialiased;
+	font: normal 10.5pt/1.3em Avenir,Helvetica,Arial,sans-serif;
+	margin: 0;
+	padding: 45mm 20mm 0mm 25mm;
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div#wrapper {
+	height: 100%;
+	display: inline;
+}
+
+a {
+	color:#000;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 0.5em 0;
+}
+
+h4 {
+  font-size: 115%;
+}
+h5, h6 {
+  font-size: 100%;
+}
+
+hr {
+	border: none;
+}
+
+body hr:first-child, #wrapper hr:first-child {
+  display: none;
+}
+
+blockquote+hr+blockquote+hr {
+	clear: both;
+}
+
+figure {
+	margin: 0 1em 1em 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+figcaption {
+	font-size: 90%;
+	margin-bottom: 0.5em;
+}
+
+.poetry pre {
+	display:block;
+	font-family:Georgia, Garamond, serif!important;
+	font-size:110%!important;
+	font-style:italic;
+	line-height:1.6em;
+	margin-left:1em
+}
+
+.poetry pre code {
+	font-family:Georgia, Garamond, serif!important
+}
+
+/* @end */
+
+
+/* @group Kontaktdaten/Briefkopf
+ ---------------------------------------------------------------
+ */
+
+blockquote {
+	width:65mm;
+	float:right;
+	margin:0 0 2em 0;
+}
+
+blockquote a {
+	text-decoration: none;
+}
+
+blockquote h1 {
+	font-size: 120%;
+	margin: 0;
+}
+
+blockquote+hr {
+  display: none;
+}
+
+/* @end Kontaktdaten/Briefkopf */
+
+
+/* @group Adressfeld
+ ---------------------------------------------------------------
+ */
+
+blockquote+hr+blockquote {
+	width:80mm;
+	float:left;
+	margin:0;
+}
+
+blockquote+hr+blockquote h2 {
+	height: 10mm;
+	font-weight: normal;
+	font-size: 80%;
+	margin:0;
+}
+
+/* @end Adressfeld */
+
+
+/* @group Fließtext
+ ---------------------------------------------------------------
+ */
+
+/* 1. Zeile: Datum rechtsbündig */
+blockquote+hr+blockquote+hr+blockquote {
+	float: right;
+	clear: both;
+	width: 65mm;
+}
+
+blockquote+hr+blockquote+hr+blockquote+* {
+	clear:both;
+}
+
+/* Betreffzeile */
+blockquote+h3 {
+	font-size: 100%;
+	margin-bottom: 2em;
+}
+
+/* @end Fließtext */
+
+
+/* @group Unterschrift */
+
+p+blockquote, p+hr+blockquote, figure+blockquote, ol+blockqoute, ul+blockquote {
+  float: none;
+  margin-top: 2em;
+  line-height: 2em;
+}
+
+p+blockquote p+p:last-child, p+hr+blockquote p+p:last-child, figure+blockquote p+p:last-child, ol+blockqoute p+p:last-child, ul+blockquote p+p:last-child {
+  margin-top: 3em;
+}
+
+/* @end */
+
+
+/* @group Fußnoten
+ ---------------------------------------------------------------
+ */
+
+.reversefootnote, #footnotes a, a.footnote {
+  text-decoration: none;
+}
+
+.footnotes, #footnotes {
+  margin-top: 2em;
+  border-top: 1px solid #888;
+  padding-top: 1em;
+  font-size: 80%;
+}
+
+.footnotes ol {
+  margin: 0;
+}
+
+.footnotes hr {
+  display: none;
+}
+
+sup, sub, p>a.footnote {
+	height:0;
+	line-height:0.8;
+	vertical-align:super;
+  font-size:.8em;
+}
+
+sub {
+	vertical-align: sub;
+	top: -1px;
+}
+
+/* @end */
+
+
+/* @group Listen
+ ---------------------------------------------------------------
+ */
+
+dd {
+	margin-bottom:1em
+}
+
+ul { 
+  list-style-type: square; 
+}
+
+li > p:first-child {
+	margin:0
+}
+
+ul, ol {
+	padding-left: 1.5em;
+}
+
+ul ul,ul ol {
+	margin-bottom:.4em
+}
+
+/* @end Listen */
+
+
+/* @group Tabellen
+ ---------------------------------------------------------------
+ */
+
+caption,col,colgroup,table,tbody,td,tfoot,th,thead,tr {
+	border-spacing:0
+}
+
+table {
+	border: none;
+	border-collapse:collapse;
+	margin: 2em 0;
+	padding:0;
+	width: 100%;
+}
+
+h1+table, h2+table, h3+table, h4+table {
+  margin-top: 0;
+}
+
+table th:first-child {
+	width: 50%;
+}
+
+table th,table td {
+	line-height:1.8em;
+	padding:0 1em;
+	border-bottom:1px solid #888;
+	border-right:1px solid #888;
+}
+table th:first-child,table td:first-child,
+table th:last-child,table td:last-child {
+	padding: 0;
+}
+
+table th:last-child,table td:last-child {
+	border-right: none;
+}
+
+table tr:last-child td {
+	border-bottom: 0;
+}
+
+table thead {
+	border-bottom:2px solid #000
+}
+
+table tbody {
+	border-top:1px solid #888
+}
+
+table tbody:last-child {
+	border-top: 2px solid #000;
+}
+
+/* @end Tabellen */
+
+
+/* --------------------------------------------------------------- */
+
+@media print {
+  @page {
+    margin:0;
+    padding:0;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Standard-Druckrand von Safari (ca. 6mm) abziehen */
+  body {
+    /*padding: 45-6mm 20-6mm 0mm 25-6mm; */
+    padding: 39mm 14mm 0mm 19mm;
+  	overflow:auto;
+  }
+
+  /* Standard-Ränder von Marked 2 (70 30 70 30 pt) abziehen */
+	body.normbriefdin5008 {
+  	/*padding: 45-25mm 20-10mm 0mm 25-10mm;*/
+		padding: 20mm 10mm 0mm 15mm;
+		zoom: 1;
+	}
+
+	img, pre, blockquote, table, figure {
+		page-break-inside: avoid
+	}
+
+	.reversefootnote { display: none; }
+}
+
+
+@media print{
+#generated-toc-clone,#generated-toc{display:none!important}
+}
+
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <blockquote>
+<h1 id="macandi">Mac Andi</h1>
+
+<p>Markdown-Profi </p>
+
+<p>Musterstraße 2<br/>
+12345 Musterdorf </p>
+
+<p>Telefon: 01234 56789<br/>
+Mobil: 0123 123456789<br/>
+E-Mail: <a href="mailto:redaktion@mac-and-i.de">redaktion@mac-and-i.de</a><br/>
+Website: <a href="http://www.mac-and-i.de">www.mac-and-i.de</a> </p>
+
+<p>IBAN: DE00 1234 5678 1234 5678 90<br/>
+BIC: MARKDOW0000 </p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+<h2 id="macandimusterstrae212345musterdorf">Mac Andi · Musterstraße 2 · 12345 Musterdorf</h2>
+
+<p>Karl Empfänger<br/>
+Musterweg 3<br/>
+67890 Musterstadt </p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+<p>Musterdorf, 24. Dezember 2013 </p>
+</blockquote>
+
+<h3 id="normbriefemitmarkdown">Normbriefe mit Markdown</h3>
+
+<p>Sehr geehrter Herr Empfänger, </p>
+
+<p>wussten Sie, dass Sie mit Markdown auch Briefe schreiben können? Dank dieses Stylesheets können Sie ihre Textverarbeitung einmotten. </p>
+
+<p>Beim Einsatz von MultiMarkdown, werden auch Tabellen und Fußnoten<a href="#fn:1" id="fnref:1" title="see footnote" class="footnote">[1]</a> unterstützt. </p>
+
+<h4 id="mitmultimarkdownsindauchrechnungenmglich">Mit MultiMarkdown sind auch Rechnungen möglich</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:center;"/>
+<col style="text-align:right;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Posten</th>
+	<th style="text-align:center;">Menge</th>
+	<th style="text-align:right;">Preis (€)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Überschriften</td>
+	<td style="text-align:center;">3</td>
+	<td style="text-align:right;">60,00</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Listen</td>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:right;">40,00 </td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2">Gesamt:</td>
+	<td style="text-align:right;">100,00 </td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="zwischenberschriftmitgleicherschriftgre">Zwischenüberschrift mit gleicher Schriftgröße</h5>
+
+<p>Natürlich funktionieren auch Bilder. Bei MultiMarkdown sogar mit Bildunterschriften. </p>
+
+<figure>
+<img src="http://lorempixel.com/g/420/260" alt="Bildunterschrift" id="bild" />
+<figcaption>Bildunterschrift</figcaption>
+</figure>
+
+<blockquote>
+<p>Mit freundlichen Grüßen </p>
+
+<p>Max Absender </p>
+</blockquote>
+
+<p>PS: Weiterer Text folgt hier </p>
+
+<hr />
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:1">
+<p>Fußnoten findet man allerdings selten im Briefverkehr <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+<!-- ##END MARKED WRAPPER## -->
+    </div>
+</body>
+</html>
