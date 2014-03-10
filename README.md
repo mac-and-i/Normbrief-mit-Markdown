@@ -11,7 +11,7 @@ Mit diesem Stylesheet (CSS) kann man mittels [Markdown](http://www.mac-and-i.de/
 
 ## Installation
 
-Die CSS-Datei Bei den meisten Programmen muss die CSS-Datei lediglich in einen Ordner kopiert werden.
+Die CSS-Datei funktioniert in vielen Programmen. Bei den meisten muss diese lediglich in einen Ordner kopiert werden.
 
 * **Marked** (Version 1 und 2)
 	CSS-Datei nach `~/Library/Application Support/Marked/Custom CSS/` kopieren und über die Einstellungen unter Style manuell zu den Custom CSS hinzufügen.
