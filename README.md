@@ -2,26 +2,26 @@
 
 _© 2014 Wolfgang Reszel für [Mac & i](http://www.mac-and-i.de)_
 
-Mit diesem Stylesheet (CSS) kann man mittels [Markdown](http://www.mac-and-i.de/markdown) private Briefe oder auch Geschäftsbriefe verfassen. Dabei wird das Anschriftsfenster von Briefumschlägen unterstützt. Der Briefkopf mit Bankdaten und Kontaktdaten erscheint in einer zweiten Spalte ([siehe Beispiel](http://htmlpreview.github.io/?https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.html)).
+Mit diesem Stylesheet (CSS) kann man mittels [Markdown](http://www.mac-and-i.de/markdown) private Briefe oder auch Geschäftsbriefe verfassen. Dabei wird das Anschriftsfenster von Briefumschlägen berücksichtigt. Der Briefkopf mit Bank- und Kontaktdaten erscheint in einer zweiten Spalte ([siehe Beispiel](http://htmlpreview.github.io/?https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.html)).
 
-* [Muster-Normbrief als Markdown-Datei](https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.md)
+* [**Download**](https://github.com/mac-and-i/Normbrief-mit-Markdown/archive/master.zip)
 * [Beispiel-Export aus Marked 2](http://htmlpreview.github.io/?https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.html)
 * [Einführung in Markdown](http://www.mac-and-i.de/markdown)  
 	Mit Syntax-Übersicht zum Ausrdrucken sowie umfangreiche Linkliste zu Apps für iOS und OS X
+* [Einfacheres Brief-Stylesheet für Marked 2](http://maennig.de/briefe-markdown) 
 
 ## Installation
 
-Die CSS-Datei Bei den meisten Programmen muss die CSS-Datei lediglich in einen Ordner kopiert werden.
+Die CSS-Datei funktioniert in vielen Programmen. Bei den meisten muss diese lediglich in einen Ordner kopiert werden.
 
-* **Marked** (Version 1 und 2)
-	CSS-Datei nach `~/Library/Application Support/Marked/Custom CSS/` kopieren und über die Einstellungen unter Style manuell zu den Custom CSS hinzufügen.
-* **Mou**
+* **Marked** (Version 1 und 2)  
+	CSS-Datei nach `~/Library/Application Support/Marked/Custom CSS/` kopieren und über die Einstellungen unter Style manuell zu den Custom CSS hinzufügen. Die CSS-Datei ist auf die Standard-Druckränder von Marked vorbereitet (70 30 70 30).
+* **Mou**  
 	`~/Library/Application Support/Mou/CSS`
-* **LightPaper**
+* **LightPaper**  
 	`~/.lightpaper/Themes`
-* **Ulysses**
+* **Ulysses**  
 	Die CSS-Datei über die Schaltfläche _Stile hinzufügen ..._ im Stile-Bereich der Einstellungen importieren.
-	
   
 ## Struktur des Dokuments:
 
