@@ -36,12 +36,14 @@ html {
 }
 body {
 	-webkit-font-smoothing:antialiased;
-	font: normal 10.5pt/1.3em Avenir,Helvetica,Arial,sans-serif;
+	font: normal 10.5pt/1.4em Avenir,Helvetica,Arial,sans-serif;
 	margin: 0;
 	padding: 45mm 20mm 0mm 25mm;
 	height: 100%;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	max-width: 210mm;
+	color: #000;
 }
 
 div#wrapper {
@@ -59,6 +61,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1.5em 0 0.5em 0;
+  line-height: 1.2em;
 }
 
 h4 {
@@ -76,16 +79,30 @@ body hr:first-child, #wrapper hr:first-child {
   display: none;
 }
 
+blockquote {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  color: #000;
+}
+
 blockquote+hr+blockquote+hr {
 	clear: both;
 }
 
-figure {
+figure, img {
 	margin: 0 1em 1em 1em;
+	display: block;
 }
 
 img {
   max-width: 100%;
+  border: none;
+}
+
+figure img {
+  margin: 0;
+  display: inline;
 }
 
 figcaption {
@@ -181,13 +198,13 @@ blockquote+h3 {
 
 /* @group Unterschrift */
 
-p+blockquote, p+hr+blockquote, figure+blockquote, ol+blockqoute, ul+blockquote {
+p+blockquote, p+hr+blockquote, img+blockquote, figure+blockquote, ol+blockqoute, ul+blockquote {
   float: none;
   margin-top: 2em;
   line-height: 2em;
 }
 
-p+blockquote p+p:last-child, p+hr+blockquote p+p:last-child, figure+blockquote p+p:last-child, ol+blockqoute p+p:last-child, ul+blockquote p+p:last-child {
+p+blockquote p+p:last-child, p+hr+blockquote p+p:last-child, img+blockquote p+p:last-child, figure+blockquote p+p:last-child, ol+blockqoute p+p:last-child, ul+blockquote p+p:last-child {
   margin-top: 3em;
 }
 
@@ -286,6 +303,7 @@ table th:first-child {
 table th,table td {
 	line-height:1.8em;
 	padding:0 1em;
+	border: none;
 	border-bottom:1px solid #888;
 	border-right:1px solid #888;
 }
@@ -320,15 +338,6 @@ table tbody:last-child {
 /* --------------------------------------------------------------- */
 
 @media print {
-  @page {
-    margin:0;
-    padding:0;
-  }
-  html {
-    margin: 0;
-    padding: 0;
-  }
-  
   /* Standard-Druckrand von Safari (ca. 6mm) abziehen */
   body {
     /*padding: 45-6mm 20-6mm 0mm 25-6mm; */
