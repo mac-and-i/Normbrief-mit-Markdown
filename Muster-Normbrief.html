@@ -9,16 +9,11 @@
 /* 
  Normbrief DIN 5008 mit Markdown
  ---------------------------------------------------------------
- by Wolfgang Reszel for Mac & i 
- http://www.mac-and-i.de/markdown
+ by Wolfgang Reszel for Mac & i (www.mac-and-i.de)
+  
+ https://github.com/mac-and-i/Normbrief-mit-Markdown/
  
- Kompatibel mit:
- Marked 
- LightPaper
- Ulysses III
- Mou
- 
- v1.0 from 2014-03-10
+ v1.0.2 from 2014-03-13
  */
 
 
@@ -27,28 +22,33 @@
  */
 
 html {
-	width: 210mm;
-	margin:0;
-	padding:0;
-	height:100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-body {
-	-webkit-font-smoothing:antialiased;
-	font: normal 10.5pt/1.4em Avenir,Helvetica,Arial,sans-serif;
+  width: 198mm; /* Üblichen Druckrand abziehen (2*6mm) */
+	padding: 0;
 	margin: 0;
-	padding: 45mm 20mm 0mm 25mm;
-	height: 100%;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	max-width: 210mm;
+}
+
+body, p, td, div {
+	font: normal 10.5pt/1.4em Avenir,Helvetica,Arial,sans-serif !important;
+}
+
+body {
+	/*      45-6mm     25mm-6mm */
+	margin: 39mm 14mm 9mm 19mm;
+	padding: 0;
+	width: 165mm;
 	color: #000;
+	border: none;
+	background: none;
 }
 
 div#wrapper {
 	height: 100%;
 	display: inline;
+}
+
+#wrapper #contentdiv {
+	width: 198mm;
+	padding: 39mm 14mm 9mm 19mm;
 }
 
 a {
@@ -60,15 +60,16 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1.5em 0 0.5em 0;
-  line-height: 1.2em;
+	margin: 1.5em 0 0.5em 0;
+	line-height: 1.2em;
+	border: none;
 }
 
 h4 {
-  font-size: 115%;
+	font-size: 115%;
 }
 h5, h6 {
-  font-size: 100%;
+	font-size: 100%;
 }
 
 hr {
@@ -76,14 +77,14 @@ hr {
 }
 
 body hr:first-child, #wrapper hr:first-child {
-  display: none;
+	display: none;
 }
 
 blockquote {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  color: #000;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	color: #000;
 }
 
 blockquote+hr+blockquote+hr {
@@ -96,13 +97,13 @@ figure, img {
 }
 
 img {
-  max-width: 100%;
-  border: none;
+	max-width: 100%;
+	border: none;
 }
 
 figure img {
-  margin: 0;
-  display: inline;
+	margin: 0;
+	display: inline;
 }
 
 figcaption {
@@ -146,7 +147,7 @@ blockquote h1 {
 }
 
 blockquote+hr {
-  display: none;
+	display: none;
 }
 
 /* @end Kontaktdaten/Briefkopf */
@@ -164,6 +165,7 @@ blockquote+hr+blockquote {
 
 blockquote+hr+blockquote h2 {
 	height: 10mm;
+	width: 80mm;
 	font-weight: normal;
 	font-size: 80%;
 	margin:0;
@@ -199,13 +201,13 @@ blockquote+h3 {
 /* @group Unterschrift */
 
 p+blockquote, p+hr+blockquote, img+blockquote, figure+blockquote, ol+blockqoute, ul+blockquote {
-  float: none;
-  margin-top: 2em;
-  line-height: 2em;
+	float: none;
+	margin-top: 2em;
+	line-height: 2em;
 }
 
 p+blockquote p+p:last-child, p+hr+blockquote p+p:last-child, img+blockquote p+p:last-child, figure+blockquote p+p:last-child, ol+blockqoute p+p:last-child, ul+blockquote p+p:last-child {
-  margin-top: 3em;
+	margin-top: 3em;
 }
 
 /* @end */
@@ -216,29 +218,29 @@ p+blockquote p+p:last-child, p+hr+blockquote p+p:last-child, img+blockquote p+p:
  */
 
 .reversefootnote, #footnotes a, a.footnote {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .footnotes, #footnotes {
-  margin-top: 2em;
-  border-top: 1px solid #888;
-  padding-top: 1em;
-  font-size: 80%;
+	margin-top: 2em;
+	border-top: 1px solid #888;
+	padding-top: 1em;
+	font-size: 80%;
 }
 
 .footnotes ol {
-  margin: 0;
+	margin: 0;
 }
 
 .footnotes hr {
-  display: none;
+	display: none;
 }
 
 sup, sub, p>a.footnote {
 	height:0;
 	line-height:0.8;
 	vertical-align:super;
-  font-size:.8em;
+	font-size:.8em;
 }
 
 sub {
@@ -258,7 +260,7 @@ dd {
 }
 
 ul { 
-  list-style-type: square; 
+	list-style-type: square; 
 }
 
 li > p:first-child {
@@ -293,7 +295,7 @@ table {
 }
 
 h1+table, h2+table, h3+table, h4+table {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 table th:first-child {
@@ -338,28 +340,24 @@ table tbody:last-child {
 /* --------------------------------------------------------------- */
 
 @media print {
-  /* Standard-Druckrand von Safari (ca. 6mm) abziehen */
-  body {
-    /*padding: 45-6mm 20-6mm 0mm 25-6mm; */
-    padding: 39mm 14mm 0mm 19mm;
-  	overflow:auto;
-  }
-
-  /* Standard-Ränder von Marked 2 (70 30 70 30 pt) abziehen */
-	body.normbriefdin5008 {
-  	/*padding: 45-25mm 20-10mm 0mm 25-10mm;*/
-		padding: 20mm 10mm 0mm 15mm;
-		zoom: 1;
-	}
-
 	img, pre, blockquote, table, figure {
 		page-break-inside: avoid
 	}
 
-	.reversefootnote { display: none; }
+	#wrapper #contentdiv { /* Fix for nvALT */
+		margin: -23mm -19mm;
+		padding: 0;
+	}
+	#wrapper #contentdiv * { /* Fix for nvALT */
+		zoom: 1.22;
+	}
+	#wrapper #contentdiv * * { /* Fix for nvALT */
+		zoom: 1;
+	}
+
+	.reversefootnote,
+	#wrapper>header { display: none; }
 }
-
-
 @media print{
 #generated-toc-clone,#generated-toc{display:none!important}
 }

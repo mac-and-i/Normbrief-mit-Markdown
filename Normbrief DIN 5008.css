@@ -1,16 +1,11 @@
 /* 
  Normbrief DIN 5008 mit Markdown
  ---------------------------------------------------------------
- by Wolfgang Reszel for Mac & i 
- http://www.mac-and-i.de/markdown
+ by Wolfgang Reszel for Mac & i (www.mac-and-i.de)
+  
+ https://github.com/mac-and-i/Normbrief-mit-Markdown/
  
- Kompatibel mit:
- Marked 
- LightPaper
- Ulysses III
- Mou
- 
- v1.0.1 from 2014-03-12
+ v1.0.2 from 2014-03-13
  */
 
 
@@ -19,24 +14,33 @@
  */
 
 html {
-	width: 210mm;
-	margin: 0;
+  width: 198mm; /* Üblichen Druckrand abziehen (2*6mm) */
 	padding: 0;
-	-webkit-box-sizing: border-box;
-}
-body {
-	font: normal 10.5pt/1.4em Avenir,Helvetica,Arial,sans-serif;
 	margin: 0;
-	padding: 45mm 20mm 0mm 25mm;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	max-width: 210mm;
+}
+
+body, p, td, div {
+	font: normal 10.5pt/1.4em Avenir,Helvetica,Arial,sans-serif !important;
+}
+
+body {
+	/*      45-6mm     25mm-6mm */
+	margin: 39mm 14mm 9mm 19mm;
+	padding: 0;
+	width: 165mm;
 	color: #000;
+	border: none;
+	background: none;
 }
 
 div#wrapper {
 	height: 100%;
 	display: inline;
+}
+
+#wrapper #contentdiv {
+	width: 198mm;
+	padding: 39mm 14mm 9mm 19mm;
 }
 
 a {
@@ -50,6 +54,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
 	margin: 1.5em 0 0.5em 0;
 	line-height: 1.2em;
+	border: none;
 }
 
 h4 {
@@ -152,6 +157,7 @@ blockquote+hr+blockquote {
 
 blockquote+hr+blockquote h2 {
 	height: 10mm;
+	width: 80mm;
 	font-weight: normal;
 	font-size: 80%;
 	margin:0;
@@ -326,24 +332,21 @@ table tbody:last-child {
 /* --------------------------------------------------------------- */
 
 @media print {
-	/* Standard-Druckrand von Safari (ca. 6mm) abziehen */
-	body {
-		/*padding: 45-6mm 20-6mm 0mm 25-6mm; */
-		padding: 39mm 14mm 0mm 19mm;
-		overflow:auto;
-	}
-
-	/* Standard-Ränder von Marked 2 (70 30 70 30 pt) abziehen */
-	body.normbriefdin5008 {
-		/*padding: 45-25mm 20-10mm 0mm 25-10mm;*/
-		padding: 20mm 10mm 0mm 15mm;
-		zoom: 1;
-	}
-
 	img, pre, blockquote, table, figure {
 		page-break-inside: avoid
 	}
 
-	.reversefootnote { display: none; }
-}
+	#wrapper #contentdiv { /* Fix for nvALT */
+		margin: -23mm -19mm;
+		padding: 0;
+	}
+	#wrapper #contentdiv * { /* Fix for nvALT */
+		zoom: 1.22;
+	}
+	#wrapper #contentdiv * * { /* Fix for nvALT */
+		zoom: 1;
+	}
 
+	.reversefootnote,
+	#wrapper>header { display: none; }
+}
