@@ -2,11 +2,11 @@
 
 # Normbrief (DIN 5008) mit Markdown und MultiMarkdown
 
-_© 2014 Wolfgang Reszel für [Mac & i](http://www.mac-and-i.de)_
+_v1.0.2  —  © 2014 Wolfgang Reszel für [Mac & i](http://www.mac-and-i.de)_
 
 Mit diesem Stylesheet (CSS) kann man mittels [Markdown](http://www.mac-and-i.de/markdown) private Briefe oder auch Geschäftsbriefe verfassen. Dabei wird das Anschriftsfenster von Briefumschlägen berücksichtigt. Der Briefkopf mit Bank- und Kontaktdaten erscheint in einer zweiten Spalte ([siehe Beispiel](http://htmlpreview.github.io/?https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.html)).
 
-* [**Download**](https://github.com/mac-and-i/Normbrief-mit-Markdown/archive/v1.0.1.zip)
+* [**Download**](https://github.com/mac-and-i/Normbrief-mit-Markdown/archive/v1.0.2.zip)
 * [Beispiel-Export aus Marked 2](http://htmlpreview.github.io/?https://raw.github.com/mac-and-i/Normbrief-mit-Markdown/master/Muster-Normbrief.html)
 * [Einführung in Markdown](http://www.mac-and-i.de/markdown)  
 	Mit Syntax-Übersicht zum Ausrdrucken sowie umfangreiche Linkliste zu Apps für iOS und OS X
@@ -19,32 +19,41 @@ Die CSS-Datei funktioniert in vielen Programmen. Bei den meisten muss diese ledi
 ### Mac-Software
 
 * **Marked** (Version 1 und 2)  
-  CSS-Datei nach `~/Library/Application Support/Marked/Custom CSS/` kopieren und über die Einstellungen unter Style manuell zu den Custom CSS hinzufügen. Die CSS-Datei ist auf die Standard-Druckränder von Marked vorbereitet (70 30 70 30).
+	CSS-Datei nach `~/Library/Application Support/Marked/Custom CSS/` kopieren und über die Einstellungen unter Style manuell zu den Custom CSS hinzufügen. Damit das Stylsheet die gleichen Ränder wie Safari verwendet, muss man alle __Druckränder in den Einstellungen auf 17 setzen__.
 * **Mou**  
-  `~/Library/Application Support/Mou/CSS`
+	  `~/Library/Application Support/Mou/CSS`
 * **LightPaper**  
-  `~/.lightpaper/Themes`
+	  `~/.lightpaper/Themes`
 * **Ulysses**  
-  Die CSS-Datei über die Schaltfläche _Stile hinzufügen ..._ im Stile-Bereich der Einstellungen importieren.
+	Die CSS-Datei über die Schaltfläche _Stile hinzufügen ..._ im Stile-Bereich der Einstellungen importieren. Um so ein Dokument zu drucken, muss es an Safari gesendet werden, da Ulysses zu große Standard-Druckränder verwendet.
 * **Erato**  
-  In den Einstellungen Preview theme auf Custom stellen und den Edit-Button klicken. Dann den Inhalt der Normbrief-CSS-Datei in die custom.css einfügen und speichern.
+	In den Einstellungen Preview theme auf Custom stellen und den Edit-Button klicken. Dann den Inhalt der Normbrief-CSS-Datei in die custom.css einfügen und speichern.
+* **Byword** (siehe [unten](#programme-ohne-stylesheet-auswahl))
+* **Coda 2** (siehe [unten](#programme-ohne-stylesheet-auswahl))
+* **nvALT** (siehe [unten](#programme-ohne-stylesheet-auswahl))
+
+#### Programme ohne Stylesheet-Auswahl
+Einigen Programmen wie Byword (Mac) oder DownMarker (Windows) kann man das Stylesheet unterjubeln, indem man folgende Zeile an das Ende des Markdown-Dokuments anfügt.
+
+`<style>@import url('file:///PFAD/ZU/Normbrief DIN 5008.css');</style>`
+_(An den Pfad kommt man am schnellsten, indem man die CSS-Datei mit einem Browser öffnet.)_
+
+Funktionieret nicht mit: **iA Writer**, **Marko**, **Markdown Life**
 
 ### iOS-Apps
 
 * **Editorial**
 	[Workflow mit Druckfunktion](http://editorial-app.appspot.com/workflows/search?q=Din+5008)
+* **Nocs**  
+	CSS-Datei in den Ordner mit den Markdown-Dokumenten legen und in `styles.css` umbenennen. Alternativ in den Einstellungen den Dateinamen bei _Folder Custom_ auf `Normbrief DIN 5008.css` setzen.
+* **Textastic**  (siehe [unten](#apps-ohne-stylesheet-auswahl))
 
-### Programme ohne Stylesheet-Auswahl
-Einigen Programmen wie Byword (Mac) oder DownMarker (Windows) kann man das Stylesheet unterjubeln, indem man folgende Zeile an das Ende des Markdown-Dokuments anfügt.
-
-`<style>@import url('file:///PFAD/ZU/Normbrief DIN 5008.css');</style>`
-
-Den Pfad bekommt man, wenn man die CSS-Datei mit einem Browser öffnet.
-
-Bei Apps mit Datei-Verwaltung wie Textastic (iOS) muss man die CSS-Datei in die App importieren und dann mit folgender Ergänzung im Markdown-Dokument ansprechen.
+#### Apps ohne Stylesheet-Auswahl
+Bei Apps mit Datei-Verwaltung wie Textastic (iOS) muss man die CSS-Datei in die App importieren und dann mit folgender Ergänzung am Ende des Markdown-Dokuments ansprechen.
 
 `<style>@import url('/Normbrief DIN 5008.css');</style>`
 
+Funktioniert nicht mit: **Byword**, **iA Writer**
 
 ## Struktur des Dokuments
 
