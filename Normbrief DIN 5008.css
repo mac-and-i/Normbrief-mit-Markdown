@@ -80,6 +80,7 @@ blockquote {
 }
 
 blockquote+hr+blockquote+hr,
+blockquote+hr+blockquote+a+hr,
 blockquote+a+hr+blockquote+hr {
 	clear: both;
 }
@@ -176,6 +177,7 @@ blockquote+a+hr+blockquote h2 {
 
 /* 1. Zeile: Datum rechtsbündig */
 blockquote+hr+blockquote+hr+blockquote,
+blockquote+hr+blockquote+a+hr+blockquote,
 blockquote+a+hr+blockquote+hr+blockquote {
 	float: right;
 	clear: both;
@@ -183,6 +185,7 @@ blockquote+a+hr+blockquote+hr+blockquote {
 }
 
 blockquote+hr+blockquote+hr+blockquote+*,
+blockquote+hr+blockquote+a+hr+blockquote+*,
 blockquote+a+hr+blockquote+hr+blockquote+* {
 	clear:both;
 }
