@@ -5,7 +5,7 @@
   
  https://github.com/mac-and-i/Normbrief-mit-Markdown/
  
- v1.0.2 from 2014-03-13
+ v1.0.3 from 2014-04-28
  */
 
 
@@ -79,7 +79,8 @@ blockquote {
 	color: #000;
 }
 
-blockquote+hr+blockquote+hr {
+blockquote+hr+blockquote+hr,
+blockquote+a+hr+blockquote+hr {
 	clear: both;
 }
 
@@ -138,7 +139,8 @@ blockquote h1 {
 	margin: 0;
 }
 
-blockquote+hr {
+blockquote+hr,
+blockquote+a+hr {
 	display: none;
 }
 
@@ -149,13 +151,15 @@ blockquote+hr {
  ---------------------------------------------------------------
  */
 
-blockquote+hr+blockquote {
+blockquote+hr+blockquote,
+blockquote+a+hr+blockquote {
 	width:80mm;
 	float:left;
 	margin:0;
 }
 
-blockquote+hr+blockquote h2 {
+blockquote+hr+blockquote h2,
+blockquote+a+hr+blockquote h2 {
 	height: 10mm;
 	width: 80mm;
 	font-weight: normal;
@@ -171,13 +175,15 @@ blockquote+hr+blockquote h2 {
  */
 
 /* 1. Zeile: Datum rechtsbündig */
-blockquote+hr+blockquote+hr+blockquote {
+blockquote+hr+blockquote+hr+blockquote,
+blockquote+a+hr+blockquote+hr+blockquote {
 	float: right;
 	clear: both;
 	width: 65mm;
 }
 
-blockquote+hr+blockquote+hr+blockquote+* {
+blockquote+hr+blockquote+hr+blockquote+*,
+blockquote+a+hr+blockquote+hr+blockquote+* {
 	clear:both;
 }
 
