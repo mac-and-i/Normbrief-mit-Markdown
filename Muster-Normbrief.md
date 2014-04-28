@@ -1,21 +1,21 @@
 > # Mac Andi
 > Markdown-Profi
->
+>  
 > Musterstraße 2  
 > 12345 Musterdorf
->
+>  
 > Telefon: 01234 56789  
 > Mobil: 0123 123456789  
 > E-Mail: <redaktion@mac-and-i.de>  
 > Website: [www.mac-and-i.de](http://www.mac-and-i.de)
->
+>  
 > IBAN: DE00 1234 5678 1234 5678 90  
 > BIC: MARKDOW0000
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 > ## Mac Andi · Musterstraße 2 · 12345 Musterdorf
->
+>  
 > Karl Empfänger  
 > Musterweg 3  
 > 67890 Musterstadt
@@ -47,8 +47,8 @@ Natürlich funktionieren auch Bilder. Bei MultiMarkdown sogar mit Bildunterschri
 
 ![Bildunterschrift][Bild]
 
-> Mit freundlichen Grüßen
-> 
+> Mit freundlichen Grüßen  
+>  
 > Max Absender
 
 PS: Weiterer Text folgt hier
